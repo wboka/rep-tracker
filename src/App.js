@@ -48,16 +48,16 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
-				<h1 className="is-size-1">Rep Tracker</h1>
+				<h1 className="is-size-1 is-size-3-mobile">Rep Tracker</h1>
 				{this.state.hasLocalStorage ? (
 					<p>All data is stored locally on your device</p>
 				) : (
 					<p>Data will be lost on page refresh</p>
 				)}
-				<h2 className="is-size-2">Add/Edit Exercize</h2>
+				<h2 className="is-size-2 is-size-4-mobile">Add/Edit Exercize</h2>
 				<Form addExercize={this.addExercize} />
 				<hr />
-				<h2 className="is-size-2">My Exercizes</h2>
+				<h2 className="is-size-2 is-size-4-mobile">My Exercizes</h2>
 				<ExercizeList exercizeList={this.state.exercizes} removeExercize={this.removeExercize} />
 			</div>
 		);
