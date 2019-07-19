@@ -5,7 +5,7 @@ class Form extends Component {
 		super(props);
 
 		this.initialState = {
-			exercize: '',
+			exercise: '',
 			reps: ''
 		};
 
@@ -20,30 +20,56 @@ class Form extends Component {
 		});
 	};
 
-	addExercize = () => {
-		this.props.addExercize(this.state);
+	addExercise = () => {
+		this.props.addExercise(this.state);
 		this.setState(this.initialState);
 	};
 
 	render() {
-		const { exercize, reps } = this.state;
+		const { exercise, reps } = this.state;
 
 		return (
-			<form>
-				<label className="label">Exercize</label>
-				<input
-					type="text"
-					className="input has-text-centered"
-					name="exercize"
-					id="exercize"
-					value={exercize}
-					onChange={this.handleChange}
-				/>
-				<label className="label">Reps</label>
-				<input type="number" className="input has-text-centered" name="reps" id="reps" value={reps} onChange={this.handleChange} />
-				<hr/>
-				<button type="button" className="button is-rounded is-primary" onClick={this.addExercize} disabled={!exercize.trim() || !reps.trim()}>
-					Add Exercize
+			<form className="container">
+				<h2 className="subtitle is-2 is-4-mobile">Add Exercise</h2>
+
+				<div className="field is-horizontal">
+					<div className="field-label is-normal">
+						<label className="label">Exercise</label>
+					</div>
+					<div className="field-body">
+						<input
+							type="text"
+							className="input has-text-centered is-rounded"
+							name="exercise"
+							id="exercise"
+							value={exercise}
+							onChange={this.handleChange}
+						/>
+					</div>
+				</div>
+				<div className="field is-horizontal">
+					<div className="field-label is-normal">
+						<label className="label">Reps</label>
+					</div>
+					<div className="field-body">
+						<input
+							type="number"
+							className="input has-text-centered is-rounded"
+							name="reps"
+							id="reps"
+							value={reps}
+							onChange={this.handleChange}
+						/>
+					</div>
+				</div>
+				<hr />
+				<button
+					type="button"
+					className="button is-rounded is-primary"
+					onClick={this.addExercise}
+					disabled={!exercise.trim() || !reps.trim()}
+				>
+					Add Exercise
 				</button>
 			</form>
 		);
