@@ -28,17 +28,19 @@ class App extends Component {
 	};
 
 	addExercize = exercize => {
-		exercize.logDate = moment().format('M/D/YYYY hh:mm a');
+		if (exercize.exercize && exercize.reps) {
+			exercize.logDate = moment().format('M/D/YYYY hh:mm a');
 
-		this.setState(previousState => {
-			const newState = [...previousState.exercizes, exercize];
+			this.setState(previousState => {
+				const newState = [...previousState.exercizes, exercize];
 
-			this.updateDB(newState);
+				this.updateDB(newState);
 
-			return {
-				exercizes: newState
-			};
-		});
+				return {
+					exercizes: newState
+				};
+			});
+		}
 	};
 
 	updateDB = newState => {
@@ -47,17 +49,17 @@ class App extends Component {
 
 	render() {
 		return (
-			<div className="App">
-				<h1 className="is-size-1 is-size-3-mobile">Rep Tracker</h1>
+			<div className="container has-text-centered">
+				<h1 className="title is-1 is-3-mobile">Rep Tracker</h1>
 				{this.state.hasLocalStorage ? (
 					<p>All data is stored locally on your device</p>
 				) : (
 					<p>Data will be lost on page refresh</p>
 				)}
-				<h2 className="is-size-2 is-size-4-mobile">Add/Edit Exercize</h2>
+				<h2 className="subtitle is-2 is-4-mobile">Add Exercize</h2>
 				<Form addExercize={this.addExercize} />
 				<hr />
-				<h2 className="is-size-2 is-size-4-mobile">My Exercizes</h2>
+				<h2 className="subtitle is-2 is-4-mobile">My Exercizes</h2>
 				<ExercizeList exercizeList={this.state.exercizes} removeExercize={this.removeExercize} />
 			</div>
 		);

@@ -33,16 +33,16 @@ class Form extends Component {
 				<label className="label">Exercize</label>
 				<input
 					type="text"
-					className="input"
+					className="input has-text-centered"
 					name="exercize"
 					id="exercize"
 					value={exercize}
 					onChange={this.handleChange}
 				/>
 				<label className="label">Reps</label>
-				<input type="number" className="input" name="reps" id="reps" value={reps} onChange={this.handleChange} />
+				<input type="number" className="input has-text-centered" name="reps" id="reps" value={reps} onChange={this.handleChange} />
 				<hr/>
-				<button type="button" className="button is_rounded is-primary" onClick={this.addExercize}>
+				<button type="button" className="button is-rounded is-primary" onClick={this.addExercize} disabled={!exercize.trim() || !reps.trim()}>
 					Add Exercize
 				</button>
 			</form>
