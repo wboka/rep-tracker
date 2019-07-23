@@ -53,7 +53,7 @@ class App extends Component {
 			<div className="has-text-centered">
 				<nav class="navbar is-dark" role="navigation" aria-label="main navigation">
 					<div class="navbar-brand">
-						<a class="navbar-item  has-text-centered-mobile" href="/">
+						<a class="navbar-item  has-text-centered-mobile" href="/rep-tracker">
 							<b>Rep Tracker</b>
 						</a>
 					</div>
