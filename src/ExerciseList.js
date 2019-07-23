@@ -27,7 +27,7 @@ class exerciseList extends Component {
 
 		return (
 			<div>
-				<div className="has-background-primary has-text-white columns is-hidden-mobile">
+				<div className="has-background-dark has-text-white columns is-hidden-mobile">
 					<div className="column"><b>Log Date</b></div>
 					<div className="column"><b>Exercise</b></div>
 					<div className="column"><b>Reps</b></div>

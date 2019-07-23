@@ -51,24 +51,20 @@ class App extends Component {
 	render() {
 		return (
 			<div className="has-text-centered">
-				<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+				<nav class="navbar is-dark" role="navigation" aria-label="main navigation">
 					<div class="navbar-brand">
-						<a class="navbar-item has-text-centered-mobile" href="/">
-							Rep Tracker
+						<a class="navbar-item  has-text-centered-mobile" href="/">
+							<b>Rep Tracker</b>
 						</a>
-					</div>
-					<div className="navbar-end">
-						<div className="navbar-item has-text-white">
-							{this.state.hasLocalStorage ? (
-								<p className="is-italic">All data is stored locally on your device</p>
-							) : (
-								<p>Data will be lost on page refresh</p>
-							)}
-						</div>
 					</div>
 				</nav>
 
 				<div className="container">
+					{this.state.hasLocalStorage ? (
+						<p className="is-italic">All data is stored locally on your device</p>
+					) : (
+						<p>Data will be lost on page refresh</p>
+					)}
 					<Form addExercise={this.addExercise} />
 					<hr />
 					<h2 className="subtitle is-2 is-4-mobile">My Exercises</h2>

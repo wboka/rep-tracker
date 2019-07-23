@@ -34,7 +34,7 @@ class Form extends Component {
 
 				<div className="field is-horizontal">
 					<div className="field-label is-normal">
-						<label className="label">Exercise</label>
+						<label className="label" for="exercise">Exercise</label>
 					</div>
 					<div className="field-body">
 						<input
@@ -49,7 +49,7 @@ class Form extends Component {
 				</div>
 				<div className="field is-horizontal">
 					<div className="field-label is-normal">
-						<label className="label">Reps</label>
+						<label className="label" for="reps">Reps</label>
 					</div>
 					<div className="field-body">
 						<input
@@ -65,7 +65,7 @@ class Form extends Component {
 				<hr />
 				<button
 					type="button"
-					className="button is-rounded is-primary"
+					className="button is-rounded is-dark"
 					onClick={this.addExercise}
 					disabled={!exercise.trim() || !reps.trim()}
 				>
