@@ -34,7 +34,7 @@ class Form extends Component {
 
 				<div className="field is-horizontal">
 					<div className="field-label is-normal">
-						<label className="label" for="exercise">Exercise</label>
+						<label className="label" htmlFor="exercise">Exercise</label>
 					</div>
 					<div className="field-body">
 						<input
@@ -49,7 +49,7 @@ class Form extends Component {
 				</div>
 				<div className="field is-horizontal">
 					<div className="field-label is-normal">
-						<label className="label" for="reps">Reps</label>
+						<label className="label" htmlFor="reps">Reps</label>
 					</div>
 					<div className="field-body">
 						<input

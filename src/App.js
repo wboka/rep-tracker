@@ -51,9 +51,9 @@ class App extends Component {
 	render() {
 		return (
 			<div className="has-text-centered">
-				<nav class="navbar is-dark" role="navigation" aria-label="main navigation">
-					<div class="navbar-brand">
-						<a class="navbar-item  has-text-centered-mobile" href="/rep-tracker">
+				<nav className="navbar is-dark" role="navigation" aria-label="main navigation">
+					<div className="navbar-brand">
+						<a className="navbar-item  has-text-centered-mobile" href="/rep-tracker">
 							<b>Rep Tracker</b>
 						</a>
 					</div>
