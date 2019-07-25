@@ -13,12 +13,12 @@
     "tailwindcss": "^1.0.5"
   },
   "scripts": {
-		"css": "npx tailwind build src/App.css -o src/styles.css",
+    "css": "npx tailwind build src/App.css -o src/styles.css",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
+    "predeploy": "yarn run build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
