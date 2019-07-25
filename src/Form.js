@@ -30,42 +30,42 @@ class Form extends Component {
 
 		return (
 			<form className="container">
-				<h2 className="subtitle is-2 is-4-mobile">Add Exercise</h2>
+				<h2 className="text-2xl sm:text-4xl text-bold">Add Exercise</h2>
 
-				<div className="field is-horizontal">
-					<div className="field-label is-normal">
-						<label className="label" htmlFor="exercise">Exercise</label>
-					</div>
-					<div className="field-body">
-						<input
-							type="text"
-							className="input has-text-centered is-rounded"
-							name="exercise"
-							id="exercise"
-							value={exercise}
-							onChange={this.handleChange}
-						/>
-					</div>
+				<div className="flex items-center border-b border-b-2 border-teal-500 p-2">
+					<label className="font-bold" htmlFor="exercise">
+						Exercise
+					</label>
+					<input
+						type="text"
+						className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+						name="exercise"
+						id="exercise"
+						placeholder="Push Ups"
+						aria-label="Exercise"
+						value={exercise}
+						onChange={this.handleChange}
+					/>
 				</div>
-				<div className="field is-horizontal">
-					<div className="field-label is-normal">
-						<label className="label" htmlFor="reps">Reps</label>
-					</div>
-					<div className="field-body">
-						<input
-							type="number"
-							className="input has-text-centered is-rounded"
-							name="reps"
-							id="reps"
-							value={reps}
-							onChange={this.handleChange}
-						/>
-					</div>
+				<div className="flex items-center border-b border-b-2 border-teal-500 p-2">
+					<label className="font-bold" htmlFor="reps">
+						Reps
+					</label>
+					<input
+						type="number"
+						className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+						name="reps"
+						id="reps"
+						placeholder="50"
+						aria-label="Reps"
+						value={reps}
+						onChange={this.handleChange}
+					/>
 				</div>
 				<hr />
 				<button
 					type="button"
-					className="button is-rounded is-dark"
+					className="bg-teal-500 hover:bg-teal-700 text-white py-2 px-4 rounded-full shadow"
 					onClick={this.addExercise}
 					disabled={!exercise.trim() || !reps.trim()}
 				>

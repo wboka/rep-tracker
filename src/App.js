@@ -3,8 +3,7 @@ import Lockr from 'lockr';
 import ExerciseList from './ExerciseList';
 import Form from './Form';
 import Footer from './Footer';
-import 'bulma';
-import './App.css';
+import './styles.css';
 
 const moment = require('moment');
 
@@ -50,24 +49,22 @@ class App extends Component {
 
 	render() {
 		return (
-			<div className="has-text-centered">
-				<nav className="navbar is-dark" role="navigation" aria-label="main navigation">
-					<div className="navbar-brand">
-						<a className="navbar-item  has-text-centered-mobile" href="/rep-tracker">
-							<b>Rep Tracker</b>
-						</a>
-					</div>
+			<div className="text-center">
+				<nav className="bg-teal-500 text-4xl p-2 mb-2 shadow" role="navigation" aria-label="main navigation">
+					<a className="border-none logo-font text-white text-3xl sm:text-5xl text-bold" href="/rep-tracker">
+						<b>Rep Tracker</b>
+					</a>
 				</nav>
 
-				<div className="container">
+				<div className="container mx-auto">
 					{this.state.hasLocalStorage ? (
-						<p className="is-italic">All data is stored locally on your device</p>
+						<p className="italic">All data is stored locally on your device</p>
 					) : (
-						<p>Data will be lost on page refresh</p>
+						<p className="italic text-red-600">Data will be lost on page refresh</p>
 					)}
 					<Form addExercise={this.addExercise} />
 					<hr />
-					<h2 className="subtitle is-2 is-4-mobile">My Exercises</h2>
+					<h2 className="text-2xl sm:text-4xl text-bold">My Exercises</h2>
 					<ExerciseList exerciseList={this.state.exercises} removeExercise={this.removeExercise} />
 				</div>
 				<Footer />
