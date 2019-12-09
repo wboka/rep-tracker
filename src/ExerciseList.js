@@ -17,7 +17,7 @@ class exerciseList extends Component {
 						{row.reps}
 					</div>
 					<div className="w-full sm:w-1/4 text-center">
-						<button className="w-full bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded-full shadow" onClick={() => removeExercise(index)}>
+						<button className="w-full bg-red-700 hover:bg-red-500 text-white py-2 px-4 rounded-full shadow" onClick={() => removeExercise(index)}>
 							Delete
 						</button>
 					</div>
@@ -27,7 +27,7 @@ class exerciseList extends Component {
 
 		return (
 			<div className="shadow-none sm:shadow">
-				<div className="hidden sm:flex sm:flex-wrap text-center sm:text-left bg-teal-500 text-white p-2 rounded-t">
+				<div className="hidden sm:flex sm:flex-wrap text-center sm:text-left bg-teal-700 text-white p-2 rounded-t">
 					<div className="w-full sm:w-1/4"><b>Log Date</b></div>
 					<div className="w-full sm:w-1/4"><b>Exercise</b></div>
 					<div className="w-full sm:w-1/4"><b>Reps</b></div>

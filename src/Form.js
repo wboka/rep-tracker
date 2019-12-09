@@ -65,7 +65,7 @@ class Form extends Component {
 				<hr />
 				<button
 					type="button"
-					className="bg-teal-500 hover:bg-teal-700 text-white py-2 px-4 rounded-full shadow"
+					className="bg-teal-700 hover:bg-teal-500 text-white py-2 px-4 rounded-full shadow"
 					onClick={this.addExercise}
 					disabled={!exercise.trim() || !reps.trim()}
 				>

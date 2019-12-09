@@ -50,7 +50,7 @@ class App extends Component {
 	render() {
 		return (
 			<div className="text-center">
-				<nav className="bg-teal-500 text-4xl p-2 mb-2 shadow" role="navigation" aria-label="main navigation">
+				<nav className="bg-teal-700 text-4xl p-2 mb-2 shadow" role="navigation" aria-label="main navigation">
 					<a className="border-none logo-font text-white text-3xl sm:text-5xl text-bold" href="/rep-tracker">
 						<b>Rep Tracker</b>
 					</a>
