@@ -4,7 +4,7 @@ import moment from 'moment';
 class Footer extends Component {
 	render() {
 		return (
-			<footer className="footer bg-teal-700 text-white m-0">
+			<footer className="footer bg-teal-700 text-white mt-5">
 				<div className="content-has-text-centered">
 					<p className="m-2">
 						<strong>Rep Tracker</strong> built by{' '}

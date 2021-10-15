@@ -28,7 +28,7 @@ class App extends Component {
 	};
 
 	addExercise = exercise => {
-		if (exercise.exercise && exercise.reps) {
+		if (exercise.exercise && exercise.reps > 0) {
 			exercise.logDate = moment().format('M/D/YYYY hh:mm a');
 
 			this.setState(previousState => {
@@ -62,9 +62,11 @@ class App extends Component {
 					) : (
 						<p className="italic text-red-600">Data will be lost on page refresh</p>
 					)}
+
 					<Form addExercise={this.addExercise} />
-					<hr />
+
 					<h2 className="text-2xl sm:text-4xl text-bold">My Exercises</h2>
+
 					<ExerciseList exerciseList={this.state.exercises} removeExercise={this.removeExercise} />
 				</div>
 				<Footer />
