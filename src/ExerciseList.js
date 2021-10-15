@@ -33,8 +33,7 @@ class exerciseList extends Component {
 					<div className="w-full sm:w-1/4"><b>Reps</b></div>
 					<div className="w-full sm:w-1/4">&nbsp;</div>
 				</div>
-				{rows}
-				<hr/>
+				{exerciseList.length ? rows : <div className="w-full p-2">Add an exercise above</div>}
 			</div>
 		);
 	}

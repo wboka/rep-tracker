@@ -6,7 +6,8 @@ class Form extends Component {
 
 		this.initialState = {
 			exercise: '',
-			reps: ''
+			reps: '',
+			showValidation: false
 		};
 
 		this.state = this.initialState;
@@ -15,18 +16,34 @@ class Form extends Component {
 	handleChange = event => {
 		const { name, value } = event.target;
 
+		if (name.toLowerCase() === 'reps') {
+			let numberOfReps = value > 0 ? value : 0;
+
+			this.setState({
+				showValidation: true,
+				reps: numberOfReps
+			});
+
+			return;
+		}
+
 		this.setState({
-			[name]: value
+			showValidation: true,
+			exercise: value
 		});
 	};
 
 	addExercise = () => {
+		this.setState({
+			showValidation: true
+		});
+
 		this.props.addExercise(this.state);
 		this.setState(this.initialState);
 	};
 
 	render() {
-		const { exercise, reps } = this.state;
+		const { exercise, reps, showValidation } = this.state;
 
 		return (
 			<form className="container">
@@ -47,6 +64,7 @@ class Form extends Component {
 						onChange={this.handleChange}
 					/>
 				</div>
+				{showValidation && !exercise.trim() && <div className="text-red-700">Enter an exercise</div>}
 				<div className="flex items-center border-b border-b-2 border-teal-500 p-2">
 					<label className="font-bold" htmlFor="reps">
 						Reps
@@ -62,12 +80,14 @@ class Form extends Component {
 						onChange={this.handleChange}
 					/>
 				</div>
+				{showValidation && !reps.toString().trim() && <div className="text-red-700">Enter a number of reps</div>}
+
 				<hr />
 				<button
 					type="button"
 					className="bg-teal-700 hover:bg-teal-500 text-white py-2 px-4 rounded-full shadow"
 					onClick={this.addExercise}
-					disabled={!exercise.trim() || !reps.trim()}
+					disabled={!exercise.toString().trim() || !reps.toString().trim()}
 				>
 					Add Exercise
 				</button>
